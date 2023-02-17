@@ -3,12 +3,11 @@
 
 <div class="row">
     <div class="col">
-        <h3>Personajes</h3>
-        <hr>
-        <ul *ngFor="let personaje of personajes; let i = index">
-            <li>{{ personaje.nombre }} - {{ personaje.poder | number }}</li>
-            
-        </ul>
+        <!-- [personajes] son de personajes.component   y "personajes" son de main-page.component -->
+        <app-personajes [personajes]="personajes">  
+
+        </app-personajes>
+        
     </div>
 
     <div class="col">
