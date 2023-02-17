@@ -1,0 +1,38 @@
+<h1><p>Dragon Ball Z</p></h1>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <h3>Personajes</h3>
+        <hr>
+        <ul *ngFor="let personaje of personajes; let i = index">
+            <li>{{ personaje.nombre }} - {{ personaje.poder | number }}</li>
+            
+        </ul>
+    </div>
+
+    <div class="col">
+        <h3>Agregar <small> {{nuevo.nombre}} </small></h3>
+        <hr>
+        <form (ngSubmit)="agregar( )"> <!-- ngSubmit evita el renderizado de toda la pagina -->
+            <input t
+                ype="text" 
+                placeholder="Nombre"
+                name="nombre"
+                [(ngModel)]="nuevo.nombre"
+            /><!-- [value]="nuevo.nombre"
+                (input)="cambiarNombre($event)" -->
+
+            <input 
+                type="number" 
+                placeholder="Poder"
+                name="poder"
+                [(ngModel)]="nuevo.poder"    
+            /> <!-- [(ngModel)] nos permite tener el 2 data binding, recibimos y enviamos datos -->
+
+            <button type="submit">
+                Agregar
+            </button>
+        </form>
+    </div>
+</div>
